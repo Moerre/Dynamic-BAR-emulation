@@ -87,7 +87,7 @@ module pcileech_bar_impl_MoerTLP(
                         rd_rsp_data <= rom_0000[counter_0000]; //三元运算结束后，赋值rom_0000[counter_0000]
 						//这个rom0000中的counter_0000计数器数值就等于读取的次数，从而以此赋值同偏移地址不同值
                     end
-                    16'h0380: rd_rsp_data <= rom_0380[0];//rom_0380[0]这个数组没有多个数值，所以直接复制
+			16'h0380: rd_rsp_data <= rom_0380[0];//rom_0380[0]这个数组没有多个数值，所以直接赋值
                     16'h0384: rd_rsp_data <= rom_0384[0];//同理
                     default: rd_rsp_data = 32'h00000000;//没有匹配的地址则默认赋值00000000
                 endcase
