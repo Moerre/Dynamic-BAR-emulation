@@ -28,8 +28,7 @@ module pcileech_bar_impl_MoerTLP(
 	wire [19:0] local_addr;//创建新信号 位宽20
 	//连接信号local_addr连接为计算后的偏移地址 20'hfffff = 保留后五位
     assign local_addr = ({drd_req_addr[31:24], drd_req_addr[23:16], 
-                         drd_req_addr[15:8], drd_req_addr[7:0]} - 
-                         base_address_register) & 20'hfffff;
+                         drd_req_addr[15:8], drd_req_addr[7:0]} - (base_address_register & 32'hFFFFFFF0)) & 20'hfffff;
 
 
     bit [31:0] rom_0380 [0:1];//创建一个32位宽的信号名为rom_0380  后面的[0:1]说明信号是数组类型 有0-1两个数值
