@@ -1,4 +1,4 @@
-//基于Simonrak大佬的智慧 诞生的TLP轮询读取模块
+//TLP轮询顺序读取模块
 //这是一个示例 在实际使用中通常会配合转换脚本使用
 
 module pcileech_bar_impl_MoerTLP(
